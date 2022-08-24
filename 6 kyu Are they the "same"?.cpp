@@ -4,20 +4,12 @@
 
 class Same {
 public :
-    static bool comp(std::vector<int> &a, std::vector<int> &b) {
+    static bool comp(std::vector<int> a, std::vector<int> b) {
         if (a.size() == b.size()) {
-            std::vector<int> b_correct = a;
-
-            for (int &i: b_correct) {
+            for (int &i: a) {
                 i = i * i;
             }
-
-            std::sort(b_correct.begin(), b_correct.end());
-            std::sort(b.begin(), b.end());
-
-            if (std::equal(b.begin(), b.end(), b_correct.begin())) {
-                return true;
-            }
+            return std::is_permutation(a.begin(), a.end(), b.begin());
         }
         return false;
     }
