@@ -27,7 +27,6 @@ public:
         }
 
         // Find k. See formula.
-
         int k = 0;
         if (sum < n) {
             k = -1;
