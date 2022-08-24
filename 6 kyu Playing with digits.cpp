@@ -1,4 +1,5 @@
-// https://www.codewars.com/kata/5552101f47fc5178b1000050/train/cpp
+// [Kata] https://www.codewars.com/kata/5552101f47fc5178b1000050/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
 #include <iostream>
 #include <cmath>
 
@@ -26,20 +27,14 @@ public:
         }
 
         // Find k. See formula.
+
         int k = 0;
         if (sum < n) {
             k = -1;
         } else {
-            while (true) {
-                int nk = n * k;
-                if (nk < sum)
-                    ++k;
-                else if (nk == sum) {
-                    break;
-                } else {
-                    k = -1;
-                    break;
-                }
+            k = sum / n;
+            if((k * n) != sum){
+                k = -1;
             }
         }
 
