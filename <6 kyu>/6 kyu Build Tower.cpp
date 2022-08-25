@@ -4,7 +4,7 @@
 
 std::vector<std::string> towerBuilder(unsigned nFloors) {
     std::vector<std::string> tower;
-    unsigned stars_in_row = 1;
+    unsigned stars_in_floor = 1;
 
     for (unsigned i = 0; i < (nFloors); i++) {
 
@@ -13,7 +13,7 @@ std::vector<std::string> towerBuilder(unsigned nFloors) {
         for (unsigned j = 0; j < (nFloors - i - 1); j++) {
             floor.push_back(' ');
         }
-        for (unsigned j = 0; j < stars_in_row; ++j) {
+        for (unsigned j = 0; j < stars_in_floor; ++j) {
             floor.push_back('*');
         }
         for (unsigned j = 0; j < (nFloors - i - 1); j++) {
@@ -22,7 +22,7 @@ std::vector<std::string> towerBuilder(unsigned nFloors) {
 
         tower.push_back(floor);
         floor.clear();
-        stars_in_row += 2;
+        stars_in_floor += 2;
     }
     return tower;
 }
