@@ -39,5 +39,5 @@ int main() {
     for (const auto &i: WhichAreIn::inArray(arr3, arr4)) {
         std::cout << i << " ";
     }
-
+    return 0;
 }
