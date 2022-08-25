@@ -1,4 +1,6 @@
-// https://www.codewars.com/kata/550498447451fbbd7600041c/train/cpp
+// [Kata] https://www.codewars.com/kata/550498447451fbbd7600041c/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <vector>
 #include <iostream>
 
@@ -19,6 +21,6 @@ public :
 int main() {
     std::vector<int> a = {121, 144, 19, 161, 19, 144, 19, 11};
     std::vector<int> b = {14641, 20736, 361, 25921, 361, 20736, 361, 121};
-    std::cout << Same::comp(a, b) << std::endl;
+    std::cout << Same::comp(a, b) << std::endl; // Should return true.
     return 0;
 }
