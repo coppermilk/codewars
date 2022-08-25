@@ -30,6 +30,7 @@ int FindOutlier(const std::vector<int> &arr) {
         } else {
             even_numbers.push_back(i);
         }
+        
         // If outlier find
         if (std::min(even_numbers.size(), odd_numbers.size()) == 1
             && std::max(even_numbers.size(), odd_numbers.size()) >= 2) {

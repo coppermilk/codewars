@@ -1,5 +1,6 @@
 // [Kata] https://www.codewars.com/kata/5552101f47fc5178b1000050/train/cpp
 // [User] https://www.codewars.com/users/coppermilk
+
 #include <iostream>
 #include <cmath>
 
