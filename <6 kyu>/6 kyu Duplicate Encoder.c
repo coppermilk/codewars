@@ -17,7 +17,6 @@ char *DuplicateEncoder(char *arr) {
     size_t str_len = 0;
 
     while (arr[str_len]) {
-
         // If character exist make flag.
         ++flag_table[tolower(arr[str_len])];
 
