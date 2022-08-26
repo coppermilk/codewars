@@ -1,8 +1,12 @@
+// [Kata] https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/c
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <string.h>
 #include <limits.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <iostream>
+#include <stdio.h>
+
 
 char *DuplicateEncoder(char *arr) {
     char *p_new_string;
@@ -43,13 +47,13 @@ int main() {
     // "(( @"     =>  "))((".
 
     char *test_1 = DuplicateEncoder("din");
-    std::cout << test_1 << std::endl;
+    printf ("%s\n", test_1);
     char *test_2 = DuplicateEncoder("recede");
-    std::cout << test_2 << std::endl;
+    printf ("%s\n", test_2);
     char *test_3 = DuplicateEncoder("Success");
-    std::cout << test_3 << std::endl;
+    printf ("%s\n", test_3);
     char *test_4 = DuplicateEncoder("(( @");
-    std::cout << test_4 << std::endl;
+    printf ("%s\n", test_4);
 
     return 0;
 }
