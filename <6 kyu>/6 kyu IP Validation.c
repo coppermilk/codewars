@@ -66,7 +66,7 @@ int is_valid_ip(const char *addr) {
 };
 
 int main() {
-    char *test = "122.123.15.1";
+    char *test = "122.123.15.10";
     printf("%d", is_valid_ip(test));
 
     // for(int i = -10; i < 10; ++i){
