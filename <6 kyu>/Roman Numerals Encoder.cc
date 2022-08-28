@@ -1,58 +1,37 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 std::string solution(int number) {
+    // Convert the number to a roman numeral.
+
+    //  Roman      Arabic
+    //    I          1
+    //    V          5
+    //    X          10
+    //    L          50
+    //    C          100
+    //    D          500
+
     std::string ans;
-//    Symbol    Value
-//    I          1
-//    V          5
-//    X          10
-//    L          50
-//    C          100
-            //    D          500
-    while(number){
-        if(number <= 3){
-            for(int i = number; i > 0; --i){
-                ans.push_back('I');
-                --number;
-            }
-        }
-        if(number == 4){
-            ans.push_back('I');
-            ans.push_back('V');
-            number -=4;
-        } else if (number >= 5 && number <= 8){
-            ans.push_back('V');
+    int arabic[] = {1000, 900, 500, 400,  100, 90, 50, 40, 10, 9, 5, 4, 1};
+    std::string roman[] = {"M", "CM",  "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
-            int k = number - 5;
-            for(int i = k; i > 0; --i){
-                ans.push_back('I');
-                --number;
-            }
-            number -= 5;
+    int size = sizeof(roman) / sizeof(roman[0]);
+    for (int i = 0; i < size; ++i) {
+        // Search roman value.
+        while (number - arabic[i] >= 0) {
+            ans += roman[i];
+            number -= arabic[i];
         }
-        if(number == 9){
-            ans.push_back('I');
-            ans.push_back('X');
-                number -=9;
-        }else if(number >= 10){
-            ans.push_back('X');
-            int k = number - 10;
-            for(int i = k; i > 0; --i){
-                ans.push_back('I');
-                --number;
-            }
-            number -= 10;
-        }
-
     }
     return ans;
-
 }
 
 int main() {
-    for(int i = 4; i <= 50; ++i){
 
+    // Test.
+    for (int i = 1; i <= 1000; ++i) {
         std::cout << i << ":" << solution(i) << std::endl;
     }
     return 0;
