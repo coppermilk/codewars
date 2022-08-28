@@ -7,7 +7,7 @@
 #include <time.h>
 
 char *solution(int n) {
-    // convert the number to a roman numeral
+    // Convert the number to a roman numeral.
 
     #define BUF_SIZE  64
     // Execute test 2.306785 sec; For 4% slower.
