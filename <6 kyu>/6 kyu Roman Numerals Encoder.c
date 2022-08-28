@@ -1,4 +1,4 @@
-// [Kata] https://www.codewars.com/kata/5ae94e64783bb4b6a300007b/train/cpp
+// [Kata] https://www.codewars.com/kata/51b62bf6a9c58071c600001b/train/c
 // [User] https://www.codewars.com/users/coppermilk
 
 #include <stdio.h>
