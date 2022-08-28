@@ -29,9 +29,7 @@ std::string solution(int number) {
 }
 
 int main() {
-
-    // Test.
-    for (int i = 1; i <= 1000; ++i) {
+    for (int i = 1; i <= 100; ++i) {
         std::cout << i << ":" << solution(i) << std::endl;
     }
     return 0;
