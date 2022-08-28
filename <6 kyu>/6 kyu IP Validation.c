@@ -55,7 +55,8 @@ int is_valid_ip(const char *addr) {
         for (int i = 0; i < NUM_IN_IP; i++) {
             count_digits_in_parse_ip += count_digits(ip[i]);
         }
-
+        
+        // Is everything is ok?
         if ((count_digits_in_source == count_digits_in_parse_ip) &&
             count_not_digits_in_source == DOTS_IN_IP) {
             is_ok_ip = 1;
