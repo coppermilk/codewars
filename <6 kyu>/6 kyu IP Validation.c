@@ -63,7 +63,7 @@ int is_valid_ip(const char *addr) {
     }
 
     return is_ok_ip;
-};
+}
 
 int main() {
     char *test = "122.123.15.10";
