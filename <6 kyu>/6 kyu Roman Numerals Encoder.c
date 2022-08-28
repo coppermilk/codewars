@@ -1,3 +1,6 @@
+// [Kata] https://www.codewars.com/kata/5ae94e64783bb4b6a300007b/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
