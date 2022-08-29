@@ -20,7 +20,6 @@ std::string uint32_to_ip(uint32_t ip) {
 
     // Parse number.
     int k = OCTET_IN_uint32_t;
-
     for (int i = 0; i < 32; i += 8) {
         ip_arr[--k] = (first_octet_mask & cycle_shift(ip, i));
 
