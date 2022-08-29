@@ -1,32 +1,15 @@
+// [Kata] https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <vector>
 #include <iostream>
 #include <algorithm>
 
-bool mysort(int &i, int &j){
-    return (j == 0 && abs(i) >= j);
-}
 std::vector<int> move_zeroes(const std::vector<int>& input) {
-    std::vector array = input;
-//    void bubleSort(double array[], const int size) {
-//        for (int i = 0; i < size - 1; i++) {
-//            for (int j = 0; j < size - 1 - i; j++) {
-//                if (array[j] > array[j + 1]) {
-//                    std::swap(array[j], array[j + 1]);
-//                }
-//            }
-//        }
-//    }
-    //std::sort(ans.begin(), ans.end(), mysort);
+    std::vector vec = input;
+    stable_partition(vec.begin(), vec.end(), std::negate());
 
-
-
-        for (int i = 0; i < array.size(); i++) {
-            for (int j = i; j < array.size() && abs(array[j + 1]) >= array[j] && (array[j] == 0); j++) {
-                std::swap(array[j], array[j+1]);
-            }
-        }
-
-    return array;
+    return vec;
 }
 
 int main(){
