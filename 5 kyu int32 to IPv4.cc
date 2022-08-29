@@ -26,7 +26,7 @@ std::string uint32_to_ip(uint32_t ip) {
 
         /* In this "Clang 8 C++17" on CodeWars mast to write this block,
             on all other is not necessary */
-        /*---------------------------Log--------------------------------*/
+        /*---------------------------log--------------------------------*/
         std::bitset<32> x((first_octet_mask & cycle_shift(ip, i)));
         std::cout << x << std::endl;
         std::bitset<32> y((cycle_shift(ip, i)));
