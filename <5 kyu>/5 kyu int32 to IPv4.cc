@@ -43,8 +43,8 @@ std::string uint32_to_ip(uint32_t ip) {
             ip_str += std::to_string(ip_arr[i]);
         }
     }
+    
     return ip_str;
-
 }
 
 int main() {
