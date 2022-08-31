@@ -36,7 +36,6 @@ public:
         }else{
             return dirReduc(ans);
         }
-
     }
 };
 
