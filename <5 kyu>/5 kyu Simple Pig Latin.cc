@@ -34,5 +34,5 @@ std::string pig_it(std::string str) {
 }
 
 int main() {
-    std::cout << pig_it(" ou.,ek;ke'ke?!"); // "hisTay siay ymay tringsay" .,;"'?!
+    std::cout << pig_it(" ou.,ek;ke'ke?!"); // "hisTay siay ymay tringsay" .,;"'?!od
 }
