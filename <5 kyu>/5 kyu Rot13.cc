@@ -3,11 +3,11 @@
 
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 string rot13(string msg) {
     const char shift = 13;
+
     for (char &ch: msg) {
         if ('a' <= ch && ch <= 'z') {
             if (ch > 'z' - shift) {
@@ -22,7 +22,6 @@ string rot13(string msg) {
                 ch = (char) (ch + shift);
             }
         }
-
     }
     return msg;
 }
