@@ -72,4 +72,6 @@ int main() {
     std::cout << incrementString("foobar099") << std::endl;
     std::cout << incrementString("tn00102") << std::endl;
     std::cout << incrementString("") << std::endl;
+
+    return 0;
 }
