@@ -20,28 +20,29 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
         {
             std::cout << program[i] << std::endl;
             std::cout << "{";
-           for(auto j : regs){
-               std::cout << j.first << " : " << j.second << "; ";
-           }
-           std::cout <<"}"<< std::endl;
+            for (auto j: regs) {
+                std::cout << j.first << " : " << j.second << "; ";
+            }
+            std::cout << "}" << std::endl;
 
             char com[4];
-            char name[3];
+            char name[4];
 
             int value;
             char ch_value[4];
             int jnz = 0;
 
             switch (program[i][0]) {
+                // mov <reg> <value> or mov <reg> <reg>
                 case 'm' :
                     sscanf(program[i].c_str(), "%s %s %s", com, name, ch_value);
-                    if(atoi(ch_value) != 0){
+                    if (atoi(ch_value) != 0) {
                         if (regs.find(name) != regs.end()) {
                             regs.at(name) = atoi(ch_value);
                         } else {
                             regs.insert(f::value_type(name, atoi(ch_value)));
                         }
-                    }else{
+                    } else {
                         if (regs.find(name) != regs.end()) {
                             regs.at(name) = getReg(regs, ch_value);
 
@@ -51,16 +52,19 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                     }
 
                     break;
+               // inc <reg>
                 case 'i':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = ++value;
                     break;
+                    // dec <reg>
                 case 'd':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = --value;
                     break;
+                    // jnz <reg> <location> or jnk <int> <location>
                 case 'j':
                     if (sscanf(program[i].c_str(), "%s %s %d", com, name, &jnz) == 3) {
 
@@ -75,7 +79,7 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                                 // because for is autoincrement too.
                                 i--;
                             }
-                        }else if(0 != atoi(name)){
+                        } else if (0 != atoi(name)) {
                             if (jnz > 0) {
                                 i += jnz;
                             } else if (jnz < 0) {
