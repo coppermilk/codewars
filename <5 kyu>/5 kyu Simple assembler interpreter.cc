@@ -50,7 +50,6 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                             regs.insert(f::value_type(name, getReg(regs, ch_value)));
                         }
                     }
-
                     break;
                // inc <reg>
                 case 'i':
@@ -89,7 +88,6 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                             i--;
                         }
                     }
-
                 default:;
             }
         }
