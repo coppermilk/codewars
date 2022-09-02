@@ -7,26 +7,20 @@ using namespace std;
 
 string rot13(string msg) {
     const char shift = 13;
+    const char letter_in_alfabet = 26;
 
     for (char &ch: msg) {
-        if ('a' <= ch && ch <= 'z') {
-            if (ch > 'z' - shift) {
-                ch = (char) ('a' + (ch - 'a' - shift));
-            } else {
-                ch = (char) (ch + shift);
-            }
-        } else if ('A' <= ch && ch <= 'Z') {
-            if (ch > 'Z' - shift) {
-                ch = (char) ('A' + (ch - 'A' - shift));
-            } else {
-                ch = (char) (ch + shift);
-            }
+        if(islower(ch)){
+            ch = 'a' + ((ch - 'a' + shift) % letter_in_alfabet);
+        }
+        if(isupper(ch)){
+            ch = 'A' + ((ch - 'A' + shift) % letter_in_alfabet);
         }
     }
     return msg;
 }
 
 int main() {
-    std::cout << rot13("abcdefghijklmnopqrstuvwxyz");
+    std::cout << rot13("test; abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
 }
