@@ -21,6 +21,6 @@ string rot13(string msg) {
 }
 
 int main() {
-    std::cout << rot13("test; abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    std::cout << rot13("abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
 }
