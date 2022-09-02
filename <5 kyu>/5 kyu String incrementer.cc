@@ -60,8 +60,8 @@ std::string incrementString(const std::string &str) {
     for (int i = count_zeros; i > 0; i--) {
         ans.push_back('0');
     }
-    ans += std::to_string(++num_extracted);
 
+    ans += std::to_string(++num_extracted);
     return ans;
 }
 
