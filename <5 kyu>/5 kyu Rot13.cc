@@ -6,6 +6,9 @@
 using namespace std;
 
 string rot13(string msg) {
+    /*ROT13 is a simple letter substitution cipher that replaces
+    a letter with the letter 13 letters after it in the alphabet.*/
+    
     const char shift = 13;
     const char letters_in_alfabet = 26;
 
