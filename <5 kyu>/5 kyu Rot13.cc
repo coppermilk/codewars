@@ -7,14 +7,14 @@ using namespace std;
 
 string rot13(string msg) {
     const char shift = 13;
-    const char letter_in_alfabet = 26;
+    const char letters_in_alfabet = 26;
 
     for (char &ch: msg) {
         if(islower(ch)){
-            ch = 'a' + ((ch - 'a' + shift) % letter_in_alfabet);
+            ch = 'a' + ((ch - 'a' + shift) % letters_in_alfabet);
         }
         if(isupper(ch)){
-            ch = 'A' + ((ch - 'A' + shift) % letter_in_alfabet);
+            ch = 'A' + ((ch - 'A' + shift) % letters_in_alfabet);
         }
     }
     return msg;
