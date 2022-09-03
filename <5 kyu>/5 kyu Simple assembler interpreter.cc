@@ -1,16 +1,13 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <iostream>
 
 typedef std::unordered_map<std::string, int> f;
 
-static int &getReg(std::unordered_map<std::string, int> &regs, std::string name) {
+static int &getReg(std::unordered_map<std::string, int> &regs, std::string const &name) {
     auto search = regs.find(name);
     if (search != regs.end()) {
         return search->second;
-    } else {
-        std::cout << "Not found\n";
     }
 }
 
@@ -18,13 +15,10 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
     std::unordered_map<std::string, int> regs;
     for (unsigned int i = 0; i < program.size(); ++i) {
         {
-            std::cout << i << std::endl;
-            std::cout << program[i] << std::endl;
             const int BUF_SIZE = 4;
             char com[BUF_SIZE];
             char name[BUF_SIZE];
             char ch_value[BUF_SIZE];
-
             int value;
 
             int jnz = 0;
@@ -48,58 +42,37 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                         }
                     }
                     break;
-
-                // inc <reg>
+                    // inc <reg>
                 case 'i':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = ++value;
                     break;
-
-                // dec <reg>
+                    // dec <reg>
                 case 'd':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = --value;
                     break;
-
-                // jnz <reg> <location> or jnk <int> <location>
+                    // jnz <reg> <location> or jnk <int> <location>
                 case 'j':
                     if (sscanf(program[i].c_str(), "%s %s %d", com, name, &jnz) == 3) {
-
                         if (regs.find(name) != regs.end()) {
                             value = (int &) (getReg(regs, name));
                             if (value) {
-                                if (jnz > 0) {
-                                    i += jnz;
-
-                                } else if (jnz < 0) {
-                                    i += jnz;
-                                }
-                                // because for is autoincrement too.
---i;
+                                i += jnz;
+                                // Because for is autoincrement too.
+                                --i;
                             }
                         } else if (0 != atoi(name)) {
-                            if (jnz > 0) {
-                                i += jnz;
-                            } else if (jnz < 0) {
-                                i += jnz;
-                            }
-                            // because for is autoincrement too.
---i;
+                            i += jnz;
+                            // Because for is autoincrement too.
+                            --i;
                         }
 
                     }
-                default:;
+                    break;
             }
-//            /*---------------------log---------------------*/
-//
-//            std::cout << "{";
-//            for (auto j: regs) {
-//                std::cout << j.first << " : " << j.second << "; ";
-//            }
-//            std::cout << "}" << std::endl;
-//            /*-----------------log end---------------------*/
         }
     }
     return regs;
@@ -126,14 +99,10 @@ int main() {
                                       "mov c 18",
                                       "mov d 11",
                                       "inc a",
-                                      "dec d", // 20
+                                      "dec d",
                                       "jnz d -2",
                                       "dec c",
                                       "jnz c -5"};
-
-    std::vector<std::string> program1{"mov a 0",
-                                      "mov b 1",
-                                      "inc b"};
 
     assembler(Complex1);
 }
