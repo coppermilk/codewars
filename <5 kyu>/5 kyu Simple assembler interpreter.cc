@@ -1,3 +1,6 @@
+// [Kata] https://www.codewars.com/kata/58e24788e24ddee28e000053/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -42,19 +45,19 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                         }
                     }
                     break;
-                    // inc <reg>
+                // inc <reg>
                 case 'i':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = ++value;
                     break;
-                    // dec <reg>
+                // dec <reg>
                 case 'd':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = --value;
                     break;
-                    // jnz <reg> <location> or jnk <int> <location>
+                // jnz <reg> <location> or jnk <int> <location>
                 case 'j':
                     if (sscanf(program[i].c_str(), "%s %s %d", com, name, &jnz) == 3) {
                         if (regs.find(name) != regs.end()) {
