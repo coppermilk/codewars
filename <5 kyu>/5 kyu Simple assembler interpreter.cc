@@ -18,25 +18,22 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
     std::unordered_map<std::string, int> regs;
     for (unsigned int i = 0; i < program.size(); ++i) {
         {
+            std::cout << i << std::endl;
             std::cout << program[i] << std::endl;
-            std::cout << "{";
-            for (auto j: regs) {
-                std::cout << j.first << " : " << j.second << "; ";
-            }
-            std::cout << "}" << std::endl;
-
-            char com[4];
-            char name[4];
+            const int BUF_SIZE = 4;
+            char com[BUF_SIZE];
+            char name[BUF_SIZE];
+            char ch_value[BUF_SIZE];
 
             int value;
-            char ch_value[4];
+
             int jnz = 0;
 
             switch (program[i][0]) {
-                // mov <reg> <value> or mov <reg> <reg>
+                // mov <reg> <value> or mov <reg> <reg> or mov <reg> 0
                 case 'm' :
                     sscanf(program[i].c_str(), "%s %s %s", com, name, ch_value);
-                    if (atoi(ch_value) != 0) {
+                    if (atoi(ch_value) != 0 || ch_value[0] == '0') {
                         if (regs.find(name) != regs.end()) {
                             regs.at(name) = atoi(ch_value);
                         } else {
@@ -51,19 +48,22 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                         }
                     }
                     break;
-               // inc <reg>
+
+                // inc <reg>
                 case 'i':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = ++value;
                     break;
-                    // dec <reg>
+
+                // dec <reg>
                 case 'd':
                     sscanf(program[i].c_str(), "%s %s", com, name);
                     value = (int &) (getReg(regs, name));
                     regs.at(name) = --value;
                     break;
-                    // jnz <reg> <location> or jnk <int> <location>
+
+                // jnz <reg> <location> or jnk <int> <location>
                 case 'j':
                     if (sscanf(program[i].c_str(), "%s %s %d", com, name, &jnz) == 3) {
 
@@ -72,11 +72,12 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                             if (value) {
                                 if (jnz > 0) {
                                     i += jnz;
+
                                 } else if (jnz < 0) {
                                     i += jnz;
                                 }
                                 // because for is autoincrement too.
-                                i--;
+--i;
                             }
                         } else if (0 != atoi(name)) {
                             if (jnz > 0) {
@@ -85,42 +86,54 @@ std::unordered_map<std::string, int> assembler(const std::vector<std::string> &p
                                 i += jnz;
                             }
                             // because for is autoincrement too.
-                            i--;
+--i;
                         }
+
                     }
                 default:;
             }
+//            /*---------------------log---------------------*/
+//
+//            std::cout << "{";
+//            for (auto j: regs) {
+//                std::cout << j.first << " : " << j.second << "; ";
+//            }
+//            std::cout << "}" << std::endl;
+//            /*-----------------log end---------------------*/
         }
     }
     return regs;
 }
 
 int main() {
-    std::vector<std::string> program{"mov a 1",
-                                     "mov b 1",
-                                     "mov c 0",
-                                     "mov d 26",
-                                     "jnz c 2",
-                                     "jnz 1 5",
-                                     "mov c 7",
-                                     "inc d",
-                                     "dec c",
-                                     "jnz c -2",
-                                     "mov c a",
-                                     "inc a",
-                                     "dec b",
-                                     "jnz b -2",
-                                     "mov b c",
-                                     "dec d",
-                                     "jnz d -6",
-                                     "mov c 18",
-                                     "mov d 11",
-                                     "inc a",
-                                     "dec d",
-                                     "jnz d -2",
-                                     "dec c",
-                                     "jnz c -5"};
+    std::vector<std::string> Complex1{"mov a 1",
+                                      "mov b 1",
+                                      "mov c 0",
+                                      "mov d 26",
+                                      "jnz c 2",
+                                      "jnz 1 5",
+                                      "mov c 7",
+                                      "inc d",
+                                      "dec c",
+                                      "jnz c -2",
+                                      "mov c a",
+                                      "inc a",
+                                      "dec b",
+                                      "jnz b -2",
+                                      "mov b c",
+                                      "dec d",
+                                      "jnz d -6",
+                                      "mov c 18",
+                                      "mov d 11",
+                                      "inc a",
+                                      "dec d", // 20
+                                      "jnz d -2",
+                                      "dec c",
+                                      "jnz c -5"};
 
+    std::vector<std::string> program1{"mov a 0",
+                                      "mov b 1",
+                                      "inc b"};
 
-    assembler(program);
+    assembler(Complex1);
 }
