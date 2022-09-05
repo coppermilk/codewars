@@ -34,11 +34,11 @@ int main() {
     // Test #2.
     std::cout << zeros(1000000000) << std::endl;
 
-    // Test #1.
+    // Test #3.
         for(int i = 0; i < 10; ++i){
             std::cout << zeros2(i) << std::endl;
         }
-    // Test #2.
+    // Test #4.
         std::cout << zeros2(1000000000) << std::endl;
 
     return 0;
