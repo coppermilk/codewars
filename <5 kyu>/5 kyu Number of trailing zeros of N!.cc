@@ -19,6 +19,7 @@ long zeros(long n) {
 long zeros2(long n){
     /*Return number of trailing zeros in n!; highest power of 5 dividing n!.
     More information: http://oeis.org/A027868 */
+    
     long result = 0;
     while (n){
         result += (n/=5);
@@ -35,8 +36,8 @@ int main() {
     std::cout << zeros(1000000000) << std::endl;
 
     // Test #3.
-        for(int i = 0; i < 10; ++i){
-            std::cout << zeros2(i) << std::endl;
+    for(int i = 0; i < 10; ++i){
+        std::cout << zeros2(i) << std::endl;
         }
     // Test #4.
         std::cout << zeros2(1000000000) << std::endl;
