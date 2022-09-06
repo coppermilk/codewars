@@ -1,3 +1,6 @@
+// [Kata] https://www.codewars.com/kata/555624b601231dc7a400017a/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <vector>
 #include <iostream>
 #include <algorithm>
