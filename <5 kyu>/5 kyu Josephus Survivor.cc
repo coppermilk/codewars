@@ -14,7 +14,6 @@ int josephusSurvivor(int n, int k) {
         }
     }
 
-
 }
 
 int v_shifted(std::vector<int> v, int shift){
