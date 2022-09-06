@@ -19,7 +19,6 @@ int remove_all_elements_with_circular_shift(std::vector<int> &v, int &shift) {
     }
 }
 
-// Second solution.
 int josephusSurvivor(int n, int k) {
     /* Base vector constructor.*/
 
@@ -31,6 +30,7 @@ int josephusSurvivor(int n, int k) {
     return remove_all_elements_with_circular_shift(v, k);
 }
 
+// Second solution.
 int josephusSurvivor2(int n, int k) {
     /*Return who is the "survivor", ie: the last element of a Josephus permutation.*/
 
