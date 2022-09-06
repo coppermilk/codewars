@@ -26,7 +26,6 @@ int josephusSurvivor(int n, int k) {
     for (int i = 1; i <= n; i++) {
         v.push_back(i);
     }
-
     return remove_all_elements_with_circular_shift(v, k);
 }
 
@@ -82,7 +81,6 @@ int josephusSurvivor2(int n, int k) {
     for (int i = 2; i < n + 1; i++) {
         survivor = (survivor + k) % i;
     }
-
     return survivor + 1;
 }
 
