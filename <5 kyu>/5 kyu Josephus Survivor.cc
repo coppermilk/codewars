@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm>
 
-// First solution.
+// First solution: brute forse.
 int remove_all_elements_with_circular_shift(std::vector<int> &v, int &shift) {
     /*Return who is the "survivor", ie: the last element of a Josephus permutation.*/
 
@@ -87,7 +87,7 @@ int josephusSurvivor2(int n, int k) {
 }
 
 int main() {
-    std::cout << josephusSurvivor2(7, 3);
     std::cout << josephusSurvivor(7, 3);
+    std::cout << josephusSurvivor2(7, 3);
     return 0;
 }
