@@ -1,11 +1,8 @@
-// [Kata] https://www.codewars.com/kata/555624b601231dc7a400017a/train/cpp
-// [User] https://www.codewars.com/users/coppermilk
-
 #include <vector>
 #include <iostream>
 #include <algorithm>
 
-// First solution: brute forse.
+// First solution.
 int remove_all_elements_with_circular_shift(std::vector<int> &v, int &shift) {
     /*Return who is the "survivor", ie: the last element of a Josephus permutation.*/
 
@@ -22,6 +19,7 @@ int remove_all_elements_with_circular_shift(std::vector<int> &v, int &shift) {
     }
 }
 
+// Second solution.
 int josephusSurvivor(int n, int k) {
     /* Base vector constructor.*/
 
@@ -29,10 +27,10 @@ int josephusSurvivor(int n, int k) {
     for (int i = 1; i <= n; i++) {
         v.push_back(i);
     }
+
     return remove_all_elements_with_circular_shift(v, k);
 }
 
-// Second solution.
 int josephusSurvivor2(int n, int k) {
     /*Return who is the "survivor", ie: the last element of a Josephus permutation.*/
 
@@ -84,11 +82,12 @@ int josephusSurvivor2(int n, int k) {
     for (int i = 2; i < n + 1; i++) {
         survivor = (survivor + k) % i;
     }
+
     return survivor + 1;
 }
 
 int main() {
-    std::cout << josephusSurvivor(7, 3);
     std::cout << josephusSurvivor2(7, 3);
+    std::cout << josephusSurvivor(7, 3);
     return 0;
 }
