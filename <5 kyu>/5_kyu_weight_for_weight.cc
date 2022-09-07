@@ -84,6 +84,5 @@ int main() {
 
     std::cout << WeightSort::orderWeight(test1) << std::endl;
     std::cout << WeightSort::orderWeight(test2) << std::endl;
-
     return 0;
 }
