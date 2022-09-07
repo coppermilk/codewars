@@ -18,7 +18,7 @@ int score(const std::vector<int>& dice) {
     int points = 0;
     int score_value[6] = {0};
     int points_value[2][6] = {{1000, 200, 300, 400, 500, 600},  // Three
-                              {100,  0,   0,   0,   50,  0}};   // One
+                              {100,    0,   0,   0,  50,  0}};   // One
     for (int i: dice) {
         ++score_value[i - 1];
     }
