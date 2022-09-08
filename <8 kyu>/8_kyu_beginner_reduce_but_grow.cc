@@ -3,7 +3,9 @@
 
 #include <vector>
 #include <iostream>
+#include <numeric>
 
+// First solution.
 int grow(std::vector<int> const &nums) {
     /*Result of multiplying the values together in order.*/
 
@@ -14,9 +16,16 @@ int grow(std::vector<int> const &nums) {
     return multiply;
 }
 
+// Second solution.
+int grow2(std::vector<int> const &nums) {
+    /*Result of multiplying the values together in order.*/
+
+    return std::accumulate(nums.begin(), nums.end(), 1, std::multiplies());
+}
+
 int main() {
     std::cout << grow({1, 2, 3}) << std::endl;          // 6
-    std::cout << grow({4, 1, 1, 1, 4}) << std::endl;    // 16
-    std::cout << grow({2, 2, 2, 2, 2, 2}) << std::endl; // 64
+    std::cout << grow2({4, 1, 1, 1, 4}) << std::endl;    // 16
+    std::cout << grow2({2, 2, 2, 2, 2, 2}) << std::endl; // 64
     return 0;
 }
