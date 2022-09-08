@@ -1,7 +1,12 @@
+// [Kata] https://www.codewars.com/kata/568d0dd208ee69389d000016/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+
 #include <iostream>
 #include <iomanip>
 
 int rental_car_cost(int d){
+    /*Gives out the total amount for different days(d).*/
+
     const int every_day_cost = 40;
     const int first_discount = 20;
     const int second_discount = 50;
@@ -24,4 +29,5 @@ int main(){
         std::cout << std::right << std::setfill(' ') << std::setw(2) << i << " day";
         std::cout << std::right << std::setfill(' ') << std::setw(4) << rental_car_cost(i) << std::endl;
     }
+    return 0;
 }
