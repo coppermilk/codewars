@@ -32,4 +32,5 @@ int main(){
     for(int i = 1; i <= 8; ++i){
         std::cout << get_planet_name(i) << std::endl;
     }
+    return 0;
 }
