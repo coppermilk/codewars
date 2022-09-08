@@ -2,7 +2,6 @@
 // [User] https://www.codewars.com/users/coppermilk
 
 #include <vector>
-
 typedef unsigned long long ull;
 
 class ProdFib {
@@ -23,6 +22,5 @@ int main() {
     ProdFib::productFib(5895);      // 5895     -> {89, 144, false});
     ProdFib::productFib(74049690);  // 74049690 -> {6765, 10946, 1ULL});
     ProdFib::productFib(84049690);  // 84049690 -> {10946, 17711, 0ULL});
-
     return 0;
 }
