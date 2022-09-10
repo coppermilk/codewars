@@ -1,3 +1,7 @@
+// [Kata] https://www.codewars.com/kata/54edbc7200b811e956000556/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 8 kyu Counting sheep...
+
 #include <vector>
 #include <numeric>
 #include <algorithm>
