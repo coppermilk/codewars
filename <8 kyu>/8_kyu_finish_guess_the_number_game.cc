@@ -1,6 +1,6 @@
 // [Kata] https://www.codewars.com/kata/568018a64f35f0c613000054/train/cpp
 // [User] https://www.codewars.com/users/coppermilk
-// 8 kyu Finish Guess the Number Game
+// 8 kyu Finish Guess the Number Game.
 
 #include <stdexcept>
 #include <iostream>
