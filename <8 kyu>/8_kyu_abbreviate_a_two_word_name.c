@@ -3,6 +3,7 @@
 // <8 kyu> Abbreviate a Two Word Name.
 
 #include <ctype.h>
+#include <string.h>
 
 char *get_initials (char *full_name, char initials[4]){
     /*Convert a name into initials.*/
@@ -23,10 +24,25 @@ char *get_initials (char *full_name, char initials[4]){
     return initials;
 }
 
+char *get_initials2(const char *full_name, char initials[4]){
+    /*Convert a name into initials.*/
+
+    char * space;
+    initials[0] = (char)toupper(full_name[0]);
+    initials[1] = '.';
+
+    space = strchr(full_name, ' ');
+
+    initials[2] = (char)toupper(space[1]);
+    initials[3] = '\0';
+
+    return initials;
+}
 int main(){
     /*Tests*/
 
     char initials[4];
     get_initials("Sam best", initials);
+    get_initials2("Sam best", initials);
     return 0;
 }
