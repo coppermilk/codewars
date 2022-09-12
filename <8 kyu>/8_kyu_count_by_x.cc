@@ -3,7 +3,7 @@
 // 8 kyu Count by X.
 
 #include <vector>
-std::vector<int> countBy(int x,int n){
+std::vector<int> countBy(const int &x,const int &n){
     /*Return an array of the first n multiples of x.*/
 
     std::vector<int> ans;
