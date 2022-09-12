@@ -16,7 +16,7 @@ int pow (const int &n, const int &e) {
 
 int index(const std::vector<int> &vector, const int &n) {
     /*Find the N-th power of the element in the array with the index N.
-    If N is outside the array, then return -1.*/
+      If N is outside the array, then return -1.*/
 
     return (unsigned long)n>= vector.size() ? -1 : pow(vector[n], n);
 }
