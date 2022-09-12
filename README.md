@@ -4,10 +4,5 @@
 ```
 I upload these as-is from my local testing environment.
 ```
-<iframe id="inlineFrameExample"
-    title="Inline Frame Example"
-    width="300"
-    height="200"
-    src="https://api.codetabs.com/v1/loc/?github=coppermilk/codewars">
-</iframe>
+<iframe src="https://api.codetabs.com/v1/loc/?github=coppermilk/codewars"></iframe>
 
