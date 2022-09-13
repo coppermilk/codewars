@@ -1,6 +1,7 @@
 // [Kata] https://www.codewars.com/kata/5951d30ce99cf2467e000013/train/c
 // [User] https://www.codewars.com/users/coppermilk
 // 8 kyu Pythagorean Triple
+// To do
 
 #include <stdbool.h>
 
