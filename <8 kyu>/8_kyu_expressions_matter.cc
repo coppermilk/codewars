@@ -6,14 +6,14 @@
 #include <algorithm>
 
 // First solution.
-unsigned short expressionsMatter(unsigned short a, unsigned short b, unsigned short c) {
+unsigned short int expressionsMatter (const unsigned short int &a ,const unsigned short int &b ,const unsigned short int &c){
     /*Try every combination of a,b,c with [*+()] , and return the Maximum Obtained.*/
 
     return std::max({a + b + c, a * (b + c), (a + b) * c, a * b * c});
 }
 
 // Second solution.
-unsigned short int expressionsMatter2 (unsigned short int a , unsigned short int b , unsigned short int c){
+unsigned short int expressionsMatter2 (const unsigned short int &a ,const unsigned short int &b ,const unsigned short int &c){
     /*Try every combination of a,b,c with [*+()] , and return the Maximum Obtained.*/
 
     std::vector<unsigned short int> v;
