@@ -4,5 +4,4 @@
 ```
 I upload these as-is from my local testing environment.
 ```
-<iframe src="https://api.codetabs.com/v1/loc/?github=coppermilk/codewars"></iframe>
 
