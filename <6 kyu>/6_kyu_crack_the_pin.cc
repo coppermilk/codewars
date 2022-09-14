@@ -1,6 +1,6 @@
 // [Kata] https://www.codewars.com/kata/5efae11e2d12df00331f91a6/train/cpp
 // [User] https://www.codewars.com/users/coppermilk
-// 8 kyu Crack the PIN.
+// 6 kyu Crack the PIN.
 
 /* MD5
  converted to C++ class by Frank Thilo (thilo@unix-ag.org)
