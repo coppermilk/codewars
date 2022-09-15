@@ -5,7 +5,6 @@
 
 #include <string>
 
-
 // First solution.
 bool isOpposite(const std::string& s1, const std::string& s2) {
     /*The opposite means: All letters of the two strings are the same, but the case is opposite.*/
