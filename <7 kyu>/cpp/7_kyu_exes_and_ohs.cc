@@ -6,8 +6,8 @@
 
 bool XO(const std::string &str) {
     /*Check to see if a string has the same amount of 'x's and 'o's. */
-    int balance = 0;
 
+    int balance = 0;
     for (auto ch: str) {
         switch (ch) {
             case 'x':
