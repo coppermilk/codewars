@@ -1,3 +1,7 @@
+// [Kata] https://www.codewars.com/kata/5aba780a6a176b029800041c/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 7 kyu Maximum Multiple.
+
 #include <iostream>
 
 // First solution.

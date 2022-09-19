@@ -1,3 +1,7 @@
+// [Kata] https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 7 kyuDescending Order.
+
 #include <cinttypes>
 #include <iostream>
 #include <cinttypes>
