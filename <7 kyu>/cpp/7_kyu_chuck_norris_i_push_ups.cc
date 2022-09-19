@@ -58,6 +58,9 @@ int chuckPushUps(const std::string &input) {
 }
 
 int main() {
+    
+    /*Tests.*/
+    
     std::cout << chuckPushUps(
             " 01111101000 Hi 01111101001 Chuck look at you go! 01111101010 Phwoar 01111101100 How was work? 01111101101");
 }
