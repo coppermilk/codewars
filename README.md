@@ -5,4 +5,3 @@
 I upload these as-is from my local testing environment.
 ```
 
-<iframe src="https://docs.google.com/spreadsheets/u/3/d/e/2PACX-1vQsRqdf7OZJKmE4ovPxFHWXeUcjcsslr3TDe3bmTcBd2S38MtXnEQw6OR2-bbJNZ-_JjZmOoBUkxT_B/pubhtml" title="description"></iframe>
