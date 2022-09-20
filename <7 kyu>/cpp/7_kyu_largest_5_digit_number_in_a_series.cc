@@ -1,3 +1,7 @@
+// [Kata] https://www.codewars.com/kata/51675d17e0c1bed195000001/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 7 kyu Largest 5 digit number in a series.
+
 #include <string>
 #include <iostream>
 
