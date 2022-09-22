@@ -1,6 +1,7 @@
-//
-// Created by zvgdb on 22.09.22.
-//
+// [Kata] https://www.codewars.com/kata/59377c53e66267c8f6000027/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 7 kyu Alphabet war.
+
 #include <string>
 
 using namespace std;
