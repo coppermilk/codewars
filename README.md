@@ -9,4 +9,4 @@
 I upload these as-is from my local testing environment.
 ```
 
-![Codewars](https://github.r2v.ch/codewars?user=coppermilk&stroke=161B22)
+![Codewars](https://github.r2v.ch/codewars?user=coppermilk&stroke=%23161B22)
