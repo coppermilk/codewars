@@ -5,8 +5,10 @@
 #include <valarray>
 
 int findDigit(int num, int nth) {
-    /* Takes two numbers as input, num and nth and return
-     * the nth digit of num (counting from right to left).*/
+    /* 
+     * Takes two numbers as input, num and nth and return
+     * the nth digit of num (counting from right to left).
+     */
 
     if (nth <= 0) {
         return -1;
