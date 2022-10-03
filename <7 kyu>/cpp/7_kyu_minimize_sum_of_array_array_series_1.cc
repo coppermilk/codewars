@@ -2,7 +2,6 @@
 // [User] https://www.codewars.com/users/coppermilk
 // 7 kyu Minimize Sum Of Array (Array Series #1).
 
-
 #include <vector>
 #include <algorithm>
 
