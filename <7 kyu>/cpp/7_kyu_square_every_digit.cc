@@ -1,4 +1,7 @@
-#include <iostream>
+// [Kata] https://www.codewars.com/kata/546e2562b03326a88e000020/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 7 kyu Square Every Digit.
+
 #include <valarray>
 
 int square_digits(int num) {

@@ -4,18 +4,22 @@
 
 #include <cmath>
 
-class Movie
-{
+class Movie {
 public:
     static int movie(int card, int ticket, double perc) {
+        /*
+         * The function movie has 3 parameters: card (price of the card),
+         * ticket (normal price of a ticket), perc (fraction of what he paid
+         * for the previous ticket) and returns the first n such that
+         */
         double system_a = 0;
         double system_b = card;
         int movies = 1;
-        do{
+        do {
             system_a += ticket;
             system_b += ticket * pow(perc, movies);
             ++movies;
-        } while(std::ceil(system_b) >= system_a);
+        } while (std::ceil(system_b) >= system_a);
         return movies - 1;
     }
 
