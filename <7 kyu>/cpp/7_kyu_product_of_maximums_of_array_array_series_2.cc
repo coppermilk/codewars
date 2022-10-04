@@ -19,6 +19,6 @@ int maxProduct(vector<int> numbers, int sub_size) {
 int main() {
     /*Tests.*/
 
-    std::cout << maxProduct({10, 8, 7, 9}, 3);
+    maxProduct({10, 8, 7, 9}, 3);
     return 0;
 }
