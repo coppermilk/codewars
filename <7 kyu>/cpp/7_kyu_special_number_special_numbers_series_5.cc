@@ -12,6 +12,7 @@ string specialNumber(int number) {
 
     int count_special = 0;
     int count_digits = 0;
+    
     while (number) {
         switch (number % 10) {
             case 0 ... 5:
