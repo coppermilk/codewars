@@ -4,4 +4,4 @@
 I upload these as-is from my local testing environment.
 ```
 
-[![Codewars](https://github.r2v.ch/codewars?user=coppermilk&stroke=%23417EBB)](https://www.codewars.com/users/coppermilk)
+[![Codewars](https://github.r2v.ch/codewars?user=coppermilk)](https://www.codewars.com/users/coppermilk)
