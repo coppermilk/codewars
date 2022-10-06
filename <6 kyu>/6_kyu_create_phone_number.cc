@@ -21,6 +21,7 @@ std::string createPhoneNumber(const int arr[10]) {
     for (int i = 6; i < 10; ++i) {
         number_end += std::to_string(arr[i]);
     }
+    
     return {"(" + number_code + ")" + " " + number_middle + "-" + number_end};
 }
 
