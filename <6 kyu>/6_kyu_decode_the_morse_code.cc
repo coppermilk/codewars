@@ -1,3 +1,7 @@
+// [Kata] https://www.codewars.com/kata/54b724efac3d5402db00065e/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 6 kyu Decode the Morse code.
+
 #include <string>
 #include <map>
 #include <iostream>
