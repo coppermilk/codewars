@@ -47,4 +47,5 @@ int main() {
     std::vector<std::string> art = {"BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"};
     std::vector<std::string> cd = {"A", "B", "C", "D"};
     std::cout << StockList::stockSummary(art, cd);
+    return 0;
 }
