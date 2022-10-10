@@ -16,4 +16,5 @@ std::map<char, unsigned> count(const std::string& string) {
 
 int main() {
     count("()[]([{}()])");
+    return 0;
 }
