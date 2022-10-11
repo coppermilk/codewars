@@ -1,6 +1,7 @@
-//
-// Created by zvgdb on 10.10.22.
-//
+// [Kata] https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 5 kyu Maximum subarray sum.
+
 #include <vector>
 #include <iostream>
 #include <climits>
