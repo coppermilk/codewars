@@ -1,6 +1,7 @@
 // [Kata] https://www.codewars.com/kata/59c633e7dcc4053512000073/train/cpp
 // [User] https://www.codewars.com/users/coppermilk
 // 6 kyu Consonant value.
+
 #include <string>
 
 int solve(const std::string &s) {
