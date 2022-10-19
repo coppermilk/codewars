@@ -1,6 +1,11 @@
+// [Kata] https://www.codewars.com/kata/5539fecef69c483c5a000015/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
+// 6 kyu Backwards Read Primes.
+
 #include <string>
 #include <iostream>
 #include <cmath>
+#include <algorithm>
 
 class BackWardsPrime {
 private:
@@ -9,7 +14,7 @@ private:
       if (number <= 1) {
           return false;
       }
-      for (long long i = 2; i <= sqrt(number); ++i) {
+      for (long long i = 2; i <= sqrtl(number); ++i) {
           if (number % i == 0) {
               return false;
           }
@@ -32,26 +37,14 @@ public:
   static std::string backwardsPrime(long long start, long long end) {
       /* Generate backward prime in range.*/
       std::string ans;
-      bool is_prime = false;
-      for (long long i = start; i < end; ++i) {
-          if (i == 1 || i == 0) {
-              continue;
+      for (long long i = start; i <= end; ++i) {
+          if(isPrime(i) && isCanReversed(i)){
+              ans += std::to_string(i) + " ";
           }
-          is_prime = true;
-          for (int j = 2; j <= i / 2; ++j) {
-              if (i % j == 0) {
-                  is_prime = false;
-                  break;
-              }
-          }
-          if (is_prime) {
-              if(isCanReversed(i)){
-                  ans += std::to_string(i) + " ";
-              }
-          }
-
       }
-      ans.pop_back();
+      if(ans.size() >= 2){
+          ans.pop_back();
+      }
       return ans;
   }
 };
