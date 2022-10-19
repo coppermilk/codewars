@@ -4,6 +4,8 @@ class Carboat {
 
 public:
   static std::string howmuch(int m, int n) {
+
+      /*Each possible case.*/
       if(m > n){
           std::swap(m, n);
       }
@@ -30,7 +32,6 @@ public:
       return ans;
   }
 };
-
 int main() {
     std::cout << Carboat::howmuch(10000, 200);
 }
