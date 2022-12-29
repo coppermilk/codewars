@@ -1,50 +1,26 @@
-#include <string>
-#include <vector>
-#include <iostream>
+// [Kata] https://www.codewars.com/kata/550f22f4d758534c1100025a/train/cpp
+// [User] https://www.codewars.com/users/coppermilk
 
-class DirReduction {
-public:
-    static std::vector<std::string> dirReduc(std::vector<std::string> &arr) {
-        // Compass.
-        //    N         +
-        //  W-*-E     - * +
-        //    S         -
-
-        // Remove extra direction.
-        bool is_chenge = false;
-        std::vector<std::string> ans;
-        for (int i = 0; i < arr.size() - 1; ++i) {
-            if (arr[i] == "WEST" && arr[i + 1] == "EAST" ||
-                arr[i + 1] == "WEST" && arr[i] == "EAST") {
-                arr[i] = arr[i + 1] = "";
-                is_chenge =true;
-            } else if (arr[i] == "NORTH" && arr[i + 1] == "SOUTH" ||
-                       arr[i + 1] == "NORTH" && arr[i] == "SOUTH") {
-                arr[i] = arr[i + 1] = "";
-                is_chenge = true;
-            }
-        }
-
-        // Add necessary direction.
-        for (auto &s: arr) {
-            if (!s.empty()) {
-                ans.push_back(s);
-            }
-        }
-        if(!is_chenge){
-            return ans;
-        }else{
-            return dirReduc(ans);
-        }
-
+class DirReduction
+{
+ public:
+  static std::vector<std::string> dirReduc(std::vector<std::string> arr){
+    for(unsigned long i = 0; i < arr.size(); ++i){
+      std::cout<< std::endl;
+      unsigned long i_next;
+      if(i < arr.size() - 1){
+        i_next = i + 1;
+      }
+      if((arr[i] == "EAST" && arr[i_next] == "WEST") || (arr[i] == "WEST" && arr[i_next] == "EAST")){
+        arr.erase(arr.begin() + i);
+        arr.erase(arr.begin() + i_next - 1);
+        i = -1;
+      }else if((arr[i] == "NORTH" && arr[i_next] == "SOUTH") || (arr[i] == "SOUTH" && arr[i_next] == "NORTH")){
+        arr.erase(arr.begin() + i);
+        arr.erase(arr.begin() + i_next - 1);
+        i = -1;
+      }
     }
+    return arr;
+  }
 };
-
-int main() {
-    std::vector<std::string> test1 = {"WEST", "EAST", "NORTH", "SOUTH", "EAST", "NORTH", "SOUTH", "NORTH", "SOUTH",
-                                      "NORTH", "NORTH", "EAST", "SOUTH", "EAST", "WEST", "NORTH", "SOUTH", "NORTH"};
-    for (auto i: DirReduction::dirReduc(test1)) {
-        std::cout << i << " ";
-    }
-    return 0;
-}
